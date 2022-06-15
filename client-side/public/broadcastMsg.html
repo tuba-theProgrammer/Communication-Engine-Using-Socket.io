@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form style="margin-top: 100px; margin-left: 100px;">
+          <input style="width: 500px; height: 50px;   border: 2px solid black; " type="text" id = "broadCast-msg"/>
+          <button style=" 
+          width: 200px; 
+          height: 50px;  
+          border: 5px; 
+          background-color: darkslategray;
+          border-radius: 17px; "><a style="
+          color: aliceblue;"  onClick = "BroadCastMsg()" >BroadCast</a>
+          </button>
+      </form>
+    
+</body>
+<script>
+    function BroadCastMsg()
+  {
+      var xmlHttp = new XMLHttpRequest();
+      var msg= document.getElementById('broadCast-msg').value
+      xmlHttp.open( "GET", '/SendBroadCastMsg', false ); // false for synchronous request
+      xmlHttp.send();
+   
+  }
+  </script>
+</html>
